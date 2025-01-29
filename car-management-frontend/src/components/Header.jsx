@@ -17,7 +17,7 @@ const Header = ({ onSearchResults, resetSearch }) => {
       return;
     }
 
-    fetch(`http://localhost:5000/api/cars/search?keyword=${keyword}&userID=${id}`, {
+    fetch(`https://car-management-ltbh.onrender.com/api/cars/search?keyword=${keyword}&userID=${id}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`, // Send the token for authorization

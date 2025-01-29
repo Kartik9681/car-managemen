@@ -24,7 +24,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", formData);
+      const response = await axios.post("https://car-management-ltbh.onrender.com/api/auth/login", formData);
       localStorage.setItem("authToken", response.data.token); // Save JWT token
       localStorage.setItem("userID", response.data.user.id)
       console.log(response.data.token)

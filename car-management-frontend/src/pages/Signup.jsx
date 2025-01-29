@@ -27,7 +27,7 @@ function Signup() {
     setValidationErrors({}); // Clear previous errors
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/signup", formData);
+      const response = await axios.post("https://car-management-ltbh.onrender.com/api/auth/signup", formData);
       localStorage.setItem("authToken", response.data.token); // Save JWT token
       localStorage.setItem("userID", response.data.user.id)
 

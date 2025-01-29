@@ -18,7 +18,7 @@ function EditCar() {
     }
 
     // Fetch the car details
-    fetch(`http://localhost:5000/api/cars/${id}`, {
+    fetch(`https://car-management-ltbh.onrender.com/api/cars/${id}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ function EditCar() {
     setIsSaving(true);
   
     // Update car details
-    fetch(`http://localhost:5000/api/cars/${id}`, {
+    fetch(`https://car-management-ltbh.onrender.com/api/cars/${id}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,

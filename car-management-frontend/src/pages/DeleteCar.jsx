@@ -16,7 +16,7 @@ function DeleteCar() {
     }
 
     // Fetch car details with the token in the Authorization header
-    fetch(`http://localhost:5000/api/cars/${id}`, {
+    fetch(`https://car-management-ltbh.onrender.com/api/cars/${id}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -36,7 +36,7 @@ function DeleteCar() {
     }
 
     // Send request to delete the car
-    fetch(`http://localhost:5000/api/cars/${id}`, {
+    fetch(`https://car-management-ltbh.onrender.com/api/cars/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

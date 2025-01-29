@@ -13,7 +13,9 @@ const setupSwaggerDocs = require("./routes/docs"); // Import Swagger
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://car-managemen-xyoo.vercel.app/'
+  }));
 app.use("/uploads", express.static("uploads")); // Serve uploaded images
 setupSwaggerDocs(app); // Enable API documentation
 
@@ -21,6 +23,10 @@ setupSwaggerDocs(app); // Enable API documentation
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/cars", require("./routes/carRoutes")); // Car routes
+
+app.get('/api/status', (req, res) => {
+    res.json({ message: 'Backend is working' });
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

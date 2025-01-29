@@ -16,7 +16,7 @@ function CarDetail() {
     }
 
     // Fetch the car details with the token in the Authorization header
-    fetch(`http://localhost:5000/api/cars/${id}`, {
+    fetch(`https://car-management-ltbh.onrender.com/api/cars/${id}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`, // Set the token in the Authorization header
@@ -62,7 +62,7 @@ function CarDetail() {
                 {car.images.map((image, index) => (
                   <div key={index} className="relative group">
                     <img
-                      src={`http://localhost:5000${image}`} // Serve the images from the 'uploads' folder
+                      src={`https://car-management-ltbh.onrender.com${image}`} // Serve the images from the 'uploads' folder
                       alt={`Car image ${index + 1}`}
                       className="w-full h-64 object-cover rounded-md shadow-md transition transform group-hover:scale-105"
                     />

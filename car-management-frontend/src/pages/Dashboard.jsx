@@ -19,7 +19,7 @@ function Dashboard() {
       return;
     }
 
-    fetch("http://localhost:5000/api/cars", {
+    fetch("https://car-management-ltbh.onrender.com/api/cars", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`, // Correctly set the token in the Authorization header
@@ -74,7 +74,7 @@ function Dashboard() {
                 <div className="w-full h-40 flex justify-center items-center bg-gray-100 rounded-lg mb-4">
                   {car.images && car.images.length > 0 ? (
                     <img
-                      src={`http://localhost:5000${car.images[0]}`}
+                      src={`https://car-management-ltbh.onrender.com${car.images[0]}`}
                       alt={car.title}
                       className="w-full h-full object-cover rounded-lg"
                     />
