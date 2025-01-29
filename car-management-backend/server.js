@@ -14,7 +14,7 @@ const setupSwaggerDocs = require("./routes/docs"); // Import Swagger
 const app = express();
 app.use(express.json());
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://car-managemen-xyoo.vercel.app'], // List of allowed origins
+    origin: ['http://localhost:5173', 'https://car-managemen-9oes.vercel.app/'], // List of allowed origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true, // If you are sending cookies with requests
   };
