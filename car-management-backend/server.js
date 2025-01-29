@@ -13,13 +13,12 @@ const setupSwaggerDocs = require("./routes/docs"); // Import Swagger
 
 const app = express();
 app.use(express.json());
-const corsOptions = {
-    origin: ['http://localhost:5173', 'https://car-managemen-9oes.vercel.app/'], // List of allowed origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, // If you are sending cookies with requests
-  };
-  
-  app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://car-managemen-9oes.vercel.app',  // replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // adjust methods if needed
+    allowedHeaders: ['Content-Type', 'Authorization'], // specify allowed headers
+}));
+
 app.use("/uploads", express.static("uploads")); // Serve uploaded images
 setupSwaggerDocs(app); // Enable API documentation
 
