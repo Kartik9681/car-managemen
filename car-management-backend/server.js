@@ -13,9 +13,13 @@ const setupSwaggerDocs = require("./routes/docs"); // Import Swagger
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-    origin: 'https://car-managemen-xyoo.vercel.app/'
-  }));
+const corsOptions = {
+    origin: ['http://localhost:5173', 'https://car-managemen-xyoo.vercel.app'], // List of allowed origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // If you are sending cookies with requests
+  };
+  
+  app.use(cors(corsOptions));
 app.use("/uploads", express.static("uploads")); // Serve uploaded images
 setupSwaggerDocs(app); // Enable API documentation
 
